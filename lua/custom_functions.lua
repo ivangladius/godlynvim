@@ -24,14 +24,12 @@ vim.api.nvim_create_user_command('IvanFindFileFromHome',
     require('telescope.builtin').find_files({
       prompt_title = 'Find Files',
       cwd = vim.fn.expand('$HOME'),
-      no_ignore = true,
-      hidden = true
+      find_command = {'fd', '--type', 'f', '--hidden', '--no-ignore-vcs', '--max-depth', '4'}
     })
   end,
   {}
-)
 
-vim.api.nvim_create_user_command('IvanFindConfig',
+)vim.api.nvim_create_user_command('IvanFindConfig',
   function()
     vim.cmd[[e ~/.config/nvim/init.lua]]
   end,
