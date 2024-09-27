@@ -10,6 +10,7 @@ return {
     require('plugins.bufferline'),
     require('plugins.nvimtree'),
     require('plugins.conjure'),
-    require('plugins.which-key'),  -- Add this line for which-key
-    require('plugins.hop')  -- Add this line for which-key
+    require('plugins.which-key'),
+    require('plugins.hop'),
+--    require('plugins.avante'),
 }

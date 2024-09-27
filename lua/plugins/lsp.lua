@@ -16,7 +16,7 @@ return {
         -- Setup Mason
         require('mason').setup()
         require('mason-lspconfig').setup {
-            ensure_installed = { "lua_ls", "pyright", "tsserver", "clangd" },
+            ensure_installed = { "lua_ls", "pyright", "ts_ls", "clangd" },
         }
 
         -- Setup nvim-cmp
@@ -127,7 +127,7 @@ return {
         }
 
         -- TypeScript
-        lspconfig.tsserver.setup {
+        lspconfig.ts_ls.setup {
             on_attach = on_attach,
             capabilities = capabilities,
         }
