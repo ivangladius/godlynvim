@@ -12,5 +12,6 @@ return {
     require('plugins.conjure'),
     require('plugins.which-key'),
     require('plugins.hop'),
+    require('plugins.github-theme'),
 --    require('plugins.avante'),
 }

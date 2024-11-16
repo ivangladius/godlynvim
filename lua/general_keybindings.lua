@@ -16,6 +16,8 @@ map('n', '<M-j>', ":wincmd j<CR>", {})
 map('n', '<M-k>', ":wincmd k<CR>", {})
 map('n', '<M-l>', ":wincmd l<CR>", {})
 
+map('n', '<M-f>', ':WindowsMaximize<CR>', {})
+
 -- Quick quit and save
 map('n', '<M-q>', ":q!<CR>", {})
 map('n', '<M-w>', ":w!<CR>", {})

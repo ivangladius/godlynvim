@@ -21,7 +21,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.hlsearch = false
 
 
-vim.cmd("colorscheme quiet")
+--vim.cmd("colorscheme modus_vivendi")
 
 vim.cmd('hi! MatchParen guibg=red guifg=black')
 vim.cmd('hi! Visual guibg=white guifg=black')
