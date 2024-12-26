@@ -52,3 +52,5 @@ map('n', '<C-j>', "<C-w>2-", { desc = 'Resize to down' })
 vim.keymap.set('n', '[', '%', { desc = 'Jump to matching bracket/paren' })
 vim.keymap.set('x', '[', '%', { desc = 'Jump to matching bracket/paren in visual mode' }) -- Add this line
 
+map('n', "<M-a>", ":w! | !!<CR>", { desc='Rerun last command' })
+map('n', "<M-d>", ":<C-f>", { desc='Rerun last command MENU' })

@@ -16,7 +16,7 @@ return {
         -- Setup Mason
         require('mason').setup()
         require('mason-lspconfig').setup {
-            ensure_installed = { "lua_ls", "pyright", "ts_ls", "clangd", "rust_analyzer", "zls" },
+            ensure_installed = { "lua_ls", "pyright", "ts_ls", "clangd", "rust_analyzer", "zls", "ols" },
         }
 
         -- Setup nvim-cmp
@@ -30,7 +30,8 @@ return {
                 end,
             },
             completion = {
-                completeopt = 'menu,menuone,noinsert'
+                completeopt = 'menu,menuone,noinsert',
+                autocomplete = false,
             },
             mapping = cmp.mapping.preset.insert {
                 ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -166,11 +167,18 @@ return {
             on_attach = on_attach,
             capabilities = capabilities,
         }
+        
+        -- Odin
+        lspconfig.ols.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
+
 
         -- Diagnostic configuration
         vim.diagnostic.config({
-            virtual_text = true,
-            signs = true,
+            virtual_text = false,
+            signs = false,
             update_in_insert = true,
             underline = true,
             severity_sort = true,
