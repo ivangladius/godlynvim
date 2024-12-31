@@ -54,3 +54,5 @@ vim.keymap.set('x', '[', '%', { desc = 'Jump to matching bracket/paren in visual
 
 map('n', "<M-a>", ":w! | !!<CR>", { desc='Rerun last command' })
 map('n', "<M-d>", ":<C-f>", { desc='Rerun last command MENU' })
+
+vim.keymap.set("x", "p", function() return 'pgv"' .. vim.v.register .. "y" end, { remap = false, expr = true })

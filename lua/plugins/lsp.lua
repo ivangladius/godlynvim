@@ -16,7 +16,7 @@ return {
         -- Setup Mason
         require('mason').setup()
         require('mason-lspconfig').setup {
-            ensure_installed = { "lua_ls", "pyright", "ts_ls", "clangd", "rust_analyzer", "zls", "ols" },
+            ensure_installed = { "lua_ls", "pyright", "ts_ls", "clangd", "rust_analyzer", "zls", "ols", "gopls"},
         }
 
         -- Setup nvim-cmp
@@ -156,6 +156,19 @@ return {
             capabilities = capabilities,
         }
 
+        -- Golang
+        lspconfig.gopls.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
+
+
+        -- -- Elixir
+        -- lspconfig.elixir_ls.setup {
+        --     on_attach = on_attach,
+        --     capabilities = capabilities,
+        -- }
+
         -- TypeScript
         lspconfig.ts_ls.setup {
             on_attach = on_attach,
@@ -177,7 +190,7 @@ return {
 
         -- Diagnostic configuration
         vim.diagnostic.config({
-            virtual_text = false,
+            virtual_text = true,
             signs = false,
             update_in_insert = true,
             underline = true,
