@@ -16,7 +16,7 @@ return {
         -- Setup Mason
         require('mason').setup()
         require('mason-lspconfig').setup {
-            ensure_installed = { "lua_ls", "pyright", "ts_ls", "clangd", "rust_analyzer", "zls", "ols", "gopls"},
+            ensure_installed = { "solidity_ls_nomicfoundation", "jdtls", "lua_ls", "pyright", "ts_ls", "clangd", "rust_analyzer", "zls", "ols", "gopls"}
         }
 
         -- Setup nvim-cmp
@@ -138,6 +138,17 @@ return {
             },
         }
 
+        lspconfig.jdtls.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
+
+
+        lspconfig.solidity_ls_nomicfoundation.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
+
         -- Zig
         lspconfig.zls.setup {
             on_attach = on_attach,
@@ -180,7 +191,7 @@ return {
             on_attach = on_attach,
             capabilities = capabilities,
         }
-        
+
         -- Odin
         lspconfig.ols.setup {
             on_attach = on_attach,
